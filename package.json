@@ -1,0 +1,19 @@
+{
+  "name": "hero-block-cgb-guten-block",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build",
+    "eject": "cgb-scripts eject",
+    "lint:js": "wp-scripts lint-js ./src/**/*.js",
+    "lint:js-fix": "wp-scripts lint-js ./src/**/*.js --fix",
+    "format:js": "wp-scripts format-js"
+  },
+  "dependencies": {
+    "cgb-scripts": "1.23.1"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^12.5.0"
+  }
+}
