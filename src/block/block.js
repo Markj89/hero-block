@@ -67,6 +67,9 @@ registerBlockType( 'cgb/block-hero-block', {
 			source: 'children',
 			selector: '.content',
 		},
+		className: {
+			type: 'string',
+		},
 	},
 	example: {
 		attributes: {
@@ -98,6 +101,7 @@ registerBlockType( 'cgb/block-hero-block', {
 			headline,
 			subline,
 			content,
+			className,
 			setAttributes,
 		} = props;
 
@@ -119,9 +123,9 @@ registerBlockType( 'cgb/block-hero-block', {
 			setAttributes( { subline: newSubline } );
 		}
 		const alignmentClass =
-			attributes.alignment !== null
-				? 'has-text-align-' + attributes.alignment
-				: '';
+			attributes.alignment !== null ?
+				'has-text-align-' + attributes.alignment :
+				'';
 
 		return (
 			<div className={ alignmentClass }>
@@ -152,24 +156,30 @@ registerBlockType( 'cgb/block-hero-block', {
 				<RichText
 					tagName="h1"
 					inline={ true }
+					className={ className }
 					style={ { textAlign: alignment } }
 					placeholder="This is a headline"
 					value={ headline }
 					onChange={ onChangeHeadline }
+					keepPlaceholderOnFocus={ true }
 				/>
 				<RichText
 					tagName="h2"
 					inline={ true }
+					className={ className }
 					style={ { textAlign: alignment } }
 					placeholder="This is a subline"
 					value={ subline }
 					onChange={ onChangeSubline }
+					keepPlaceholderOnFocus={ true }
 				/>
 				<RichText
 					tagName="p"
+					className={ className }
 					style={ { textAlign: alignment } }
 					value={ content }
 					onChange={ onChangeContent }
+					keepPlaceholderOnFocus={ true }
 				/>
 			</div>
 		);
@@ -189,9 +199,9 @@ registerBlockType( 'cgb/block-hero-block', {
 	save: ( props ) => {
 		const { attributes } = props;
 		const alignmentClass =
-			attributes.alignment !== null
-				? 'has-text-align-' + attributes.alignment
-				: '';
+			attributes.alignment !== null ?
+				'has-text-align-' + attributes.alignment :
+				'';
 		return (
 			<div
 				className="jumbotron jumbotron-fluid"
@@ -202,14 +212,17 @@ registerBlockType( 'cgb/block-hero-block', {
 						<RichText.Content
 							tagName="h1"
 							value={ attributes.headline }
+							className={ attributes.className }
 						/>
 						<RichText.Content
 							tagName="h2"
 							value={ attributes.subline }
+							className={ attributes.className }
 						/>
 						<RichText.Content
 							tagName="p"
 							value={ attributes.content }
+							className={ attributes.className }
 						/>
 					</div>
 				</div>

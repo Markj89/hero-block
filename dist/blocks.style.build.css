@@ -1,1 +1,26 @@
-.wp-block-cgb-block-hero-block{margin:0 auto;padding:2rem}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right;margin-left:auto}.has-text-align-center{text-align:center;margin:0 auto;display:block}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+.wp-block-cgb-block-hero-block {
+  margin: 0 auto;
+  padding: 2rem; }
+
+.has-text-align-left {
+  text-align: left; }
+
+.has-text-align-right {
+  text-align: right;
+  margin-left: auto; }
+
+.has-text-align-center {
+  text-align: center;
+  margin: 0 auto;
+  display: block; }
