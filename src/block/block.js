@@ -198,7 +198,6 @@ registerBlockType( 'cgb/block-hero-block', {
 				style={ { backgroundColor: attributes.color } }
 			>
 				<div className="container">
-					1
 					<div className={ alignmentClass }>
 						<RichText.Content
 							tagName="h1"
