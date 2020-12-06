@@ -47,7 +47,6 @@ registerBlockType( 'cgb/block-hero-block', {
 	attributes: {
 		color: {
 			type: 'object',
-			default: 'white',
 		},
 		alignment: {
 			type: 'string',
@@ -103,26 +102,26 @@ registerBlockType( 'cgb/block-hero-block', {
 		} = props;
 
 		function onChangeContent( newContent ) {
-			props.setAttributes( { content: newContent } );
+			setAttributes( { content: newContent } );
 		}
 
 		function onChangeAlignment( newAlignment ) {
-			props.setAttributes( {
+			setAttributes( {
 				alignment: newAlignment === undefined ? 'none' : newAlignment,
 			} );
 		}
 
 		function onChangeHeadline( newHeadline ) {
-			props.setAttributes( { headline: newHeadline } );
+			setAttributes( { headline: newHeadline } );
 		}
 
 		function onChangeSubline( newSubline ) {
-			props.setAttributes( { headline: newSubline } );
+			setAttributes( { subline: newSubline } );
 		}
 		const alignmentClass =
-			attributes.alignment !== null ?
-				'has-text-align-' + attributes.alignment :
-				'';
+			attributes.alignment !== null
+				? 'has-text-align-' + attributes.alignment
+				: '';
 
 		return (
 			<div className={ alignmentClass }>
@@ -136,8 +135,9 @@ registerBlockType( 'cgb/block-hero-block', {
 								<ColorPicker
 									color={ color }
 									onChangeComplete={ ( value ) =>
-										setAttributes( { color: value } )
+										setAttributes( { color: value.hex } )
 									}
+									disableAlpha
 								/>
 							</PanelRow>
 						</PanelBody>
@@ -189,12 +189,16 @@ registerBlockType( 'cgb/block-hero-block', {
 	save: ( props ) => {
 		const { attributes } = props;
 		const alignmentClass =
-			attributes.alignment !== null ?
-				'has-text-align-' + attributes.alignment :
-				'';
+			attributes.alignment !== null
+				? 'has-text-align-' + attributes.alignment
+				: '';
 		return (
-			<div className="jumbotron jumbotron-fluid">
+			<div
+				className="jumbotron jumbotron-fluid"
+				style={ { backgroundColor: attributes.color } }
+			>
 				<div className="container">
+					1
 					<div className={ alignmentClass }>
 						<RichText.Content
 							tagName="h1"

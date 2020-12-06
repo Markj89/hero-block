@@ -1,6 +1,17 @@
 # Hero Gutenberg Block
 
+Customizable Hero element using Bootstrap's Jumbotron to Gutenberg
 
+## Features
+- Change text alignment
+- Change background and text color
+
+## Installation
+- Download master verion zipped
+- Go to your WordPress `Dashboad` > `Plugins` > Click `Add New` and lastly `Upload Plugin`
+
+
+### Credits
 This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
 
 Below you will find some information on how to run scripts.
